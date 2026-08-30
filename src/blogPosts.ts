@@ -10,6 +10,30 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "dhamari-rutage-smart-village-centre",
+    date: "५ मार्च २०२५",
+    category: "शेती-तंत्रज्ञान",
+    title: "धामारीतील महाराष्ट्राचे पहिले RuTAGe स्मार्ट व्हिलेज सेंटर",
+    summary: "सौर वाळवण, उपग्रहाधारित पीक-माती सल्ला, जैवखते, धान्य स्वच्छता आणि रोपवाटिका या सुविधांची संस्थात्मक नोंद.",
+    sourceUrl: "https://www.lafondation3ds.org/news/inaugurating-rutage-smart-village-center-supported-la-fondation-dassault-systemes/"
+  },
+  {
+    slug: "dhamari-census-2011-profile",
+    date: "२०११ जनगणना",
+    category: "लोकसंख्या",
+    title: "३,९०९ लोकांचे धामारी: जनगणनेतील गावचित्र",
+    summary: "लोकसंख्या, साक्षरता, बाललोकसंख्या, जमीन वापर, सिंचन आणि २०११ मध्ये नोंदलेल्या सार्वजनिक सुविधांचा संदर्भाधारित आढावा.",
+    sourceUrl: "https://censusindia.gov.in/nada/index.php/catalog/6712"
+  },
+  {
+    slug: "dhamari-road-geotagging-2025",
+    date: "९ सप्टेंबर २०२५",
+    category: "भूमिअभिलेख",
+    title: "धामारीतील गाव रस्त्यांचे जिओ-टॅगिंग",
+    summary: "शिव, पाणंद व वहिवाट रस्त्यांना संकेतांक देऊन स्वतंत्र डिजिटल नकाशा तयार करण्याच्या महसूल अभियानाची उपलब्ध वृत्तनोंद.",
+    sourceUrl: "https://www.esakal.com/pune/todays-latest-district-marathi-news-knd25b02919-txt-pd-today-20250909023912"
+  },
+  {
     slug: "pabal-dhamari-midc-status-august-2026",
     date: "३० ऑगस्ट २०२६",
     category: "विकास",
