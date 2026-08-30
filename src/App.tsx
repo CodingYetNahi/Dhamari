@@ -15,7 +15,7 @@ const sources=[
 ["Pabal–Dhamari MIDC report","Pune Mirror, 26 August 2026","https://punemirror.com/city/pune/pabal-dhamari-midc-743-hectare-industrial-estate-pune/"],
 ["Vasudev Balwant Phadke","Press Information Bureau, Government of India","https://www.pib.gov.in/newsite/printrelease.aspx?relid=148384"]
 ];
-const phadkeImage="https://upload.wikimedia.org/wikipedia/commons/9/9d/Vasudev_Balwant_Phadke.png";
+const phadkeImage="https://upload.wikimedia.org/wikipedia/commons/c/c2/Vasudev_Balwant_Phadke.png";
 export default function App(){return <main>
 <nav className="nav shell"><a className="brand" href="#top"><span>धा</span>Dhamari Archive</a><div className="navlinks"><a href="#history">History</a><a href="#heritage">Heritage</a><a href="#gangasagar">Gangasagar</a><a href="#midc">MIDC</a><a href="#sources">Sources</a></div></nav>
 <header className="hero" id="top"><div className="shell heroGrid"><div><p className="eyebrow">Shirur · Pune · Maharashtra</p><h1>धामारी<br/><em>Dhamari</em></h1><p className="lede">A living village. A layered past. An open, sourced record of its land, temples, memories and people.</p><div className="actions"><a className="button" href="#history">Explore the timeline</a><a href="#method"><b>How facts are checked →</b></a></div></div><aside className="placeCard"><p className="label">Village record</p><dl><div><dt>Census code</dt><dd>555591</dd></div><div><dt>Population</dt><dd>3,909 <small>in 2011</small></dd></div><div><dt>Area</dt><dd>4,801 <small>hectares</small></dd></div><div><dt>PIN</dt><dd>412403</dd></div></dl><p className="coords">18.789° N · 74.098° E</p></aside></div></header>
