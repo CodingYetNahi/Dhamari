@@ -1,0 +1,10 @@
+create table if not exists public.sources(id bigint generated always as identity primary key,slug text unique not null,title text not null,publisher text not null,url text unique not null,source_type text not null,accessed_on date not null default current_date,notes text);
+create table if not exists public.archive_entries(id bigint generated always as identity primary key,slug text unique not null,title_en text not null,title_mr text,summary_en text not null,summary_mr text,category text not null,period_label text not null,year_start integer,year_end integer,confidence text not null,published boolean not null default false,sort_order integer not null default 0,created_at timestamptz not null default now());
+create table if not exists public.entry_sources(entry_id bigint references public.archive_entries(id) on delete cascade,source_id bigint references public.sources(id) on delete restrict,source_note text,primary key(entry_id,source_id));
+alter table public.sources enable row level security;alter table public.archive_entries enable row level security;alter table public.entry_sources enable row level security;
+grant select on public.sources,public.archive_entries,public.entry_sources to anon,authenticated;
+revoke insert,update,delete on public.sources,public.archive_entries,public.entry_sources from anon,authenticated;
+create policy "Public sources" on public.sources for select to anon,authenticated using(true);
+create policy "Published entries" on public.archive_entries for select to anon,authenticated using(published=true);
+create policy "Published entry sources" on public.entry_sources for select to anon,authenticated using(exists(select 1 from public.archive_entries e where e.id=entry_sources.entry_id and e.published=true));
+create index if not exists entry_sources_source_id_idx on public.entry_sources(source_id);
