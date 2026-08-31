@@ -1,0 +1,10 @@
+{
+  "queries": [
+    "धामारी शिरूर पुणे",
+    "Dhamari Shirur Pune",
+    "पाबळ धामारी MIDC",
+    "धामारी गाव इतिहास"
+  ],
+  "output": "src/data/internetUpdates.json",
+  "maximumResults": 40
+}
