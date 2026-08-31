@@ -2,9 +2,19 @@
   "queries": [
     "धामारी शिरूर पुणे",
     "Dhamari Shirur Pune",
-    "पाबळ धामारी MIDC",
-    "धामारी गाव इतिहास"
+    "पाबळ धामारी एमआयडीसी",
+    "Pabal Dhamari MIDC",
+    "गंगासागर तलाव धामारी",
+    "RuTAGe Dhamari",
+    "धामारी जिओ टॅगिंग",
+    "वासुदेव बळवंत फडके धामारी"
   ],
+  "requiredTerms": ["धामारी", "Dhamari", "पाबळ", "Pabal"],
+  "excludedTerms": [],
+  "maximumArticleAgeDays": 30,
+  "maximumNewResultsPerRun": 15,
+  "maximumStoredResults": 120,
+  "timeoutMilliseconds": 12000,
   "output": "src/data/internetUpdates.json",
-  "maximumResults": 40
+  "maximumResults": 120
 }
