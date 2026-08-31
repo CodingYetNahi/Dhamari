@@ -8,22 +8,22 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: write
 
 concurrency:
   group: update-information
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   propose:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Set up Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
-          node-version: "lts/*"
+          node-version: "24"
           cache: npm
       - name: Install dependencies
         run: npm ci
@@ -44,5 +44,11 @@ jobs:
           body: |
             Automated search candidates only. Every result is **पडताळणी प्रलंबित**.
             Merge does not publish these as factual claims; an editor must review sources first.
+            Before merging, the editor must:
+            - verify that the location is Dhamari in Shirur, Pune;
+            - open every source;
+            - verify each publication date and publisher;
+            - remove irrelevant results; and
+            - merge only suitable references.
           labels: पडताळणी प्रलंबित
           add-paths: src/data/internetUpdates.json
