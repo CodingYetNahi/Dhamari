@@ -34,7 +34,7 @@ jobs:
           changed="$(git diff --name-only)"
           test -z "$changed" || test "$changed" = "src/data/internetUpdates.json"
       - name: Open or update review pull request
-        uses: peter-evans/create-pull-request@98e1839f2aa5739096f4182eeb4c0cb19c9a1c3b # v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ github.token }}
           branch: automation/information-review
@@ -50,5 +50,4 @@ jobs:
             - verify each publication date and publisher;
             - remove irrelevant results; and
             - merge only suitable references.
-          labels: पडताळणी प्रलंबित
           add-paths: src/data/internetUpdates.json
