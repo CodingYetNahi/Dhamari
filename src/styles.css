@@ -10,3 +10,25 @@
 
 /* CountUp renders an inner span. Keep broad label rules from shrinking animated values. */
 .statGrid b>span,.smartCards b>span,.factGrid b>span{display:inline;font:inherit;color:inherit;line-height:inherit;letter-spacing:normal;text-transform:none;margin:0}
+
+/* Standalone pages */
+.pageHero{padding:95px 0 105px;background:radial-gradient(circle at 82% 25%,#d79b3745,transparent 28%),var(--cream)}
+.pageHero h1{font-size:clamp(54px,8vw,106px);line-height:.92;margin:28px 0 35px;max-width:1000px}
+.pageHero .lede{margin-bottom:0}
+.pageSection{padding-top:85px;padding-bottom:105px}
+.history.pageSection{padding-top:70px}
+.history .event h2{font:34px Georgia,serif;margin:15px 0 4px}
+.mapPlaceholder{min-height:310px;display:flex;flex-direction:column;justify-content:center;padding:55px;background:#172f2b;border:1px solid #ffffff35}
+.mapPlaceholder b{font:clamp(28px,4vw,48px) Georgia,serif;color:#e5bd72}
+.mapPlaceholder p{max-width:520px;color:#d1dbd8;line-height:1.7}
+.newsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.newsCard{display:flex;flex-direction:column;min-height:360px;padding:34px;background:var(--paper)}
+.newsCard h2{font:30px/1.18 Georgia,serif;margin:34px 0 16px}
+.newsCard>p:not(.blogMeta){line-height:1.7}
+.newsCard small{display:block;color:#68756f;line-height:1.5;margin-top:auto;padding-top:22px}
+.newsCard>a{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px;margin-top:18px}
+.emptyState{margin:55px 0 0;padding:28px;background:white;border-left:5px solid var(--ochre)}
+.caveat{line-height:1.7;color:#64716d}
+
+@media(max-width:1000px){.nav{align-items:flex-start;flex-direction:column;padding:18px 0;gap:16px}.navlinks{width:100%;overflow-x:auto;gap:20px;padding-bottom:7px;white-space:nowrap}}
+@media(max-width:800px){.navlinks{display:flex}.newsGrid{grid-template-columns:1fr}.pageHero{padding:65px 0 75px}.pageSection{padding-top:60px;padding-bottom:75px}}

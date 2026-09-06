@@ -34,13 +34,13 @@ export const blogPosts: BlogPost[] = [
     sourceUrl: "https://www.esakal.com/pune/todays-latest-district-marathi-news-knd25b02919-txt-pd-today-20250909023912"
   },
   {
-    slug: "pabal-dhamari-midc-status-august-2026",
-    date: "३० ऑगस्ट २०२६",
+    slug: "pabal-dhamari-midc-status-september-2026",
+    date: "२ सप्टेंबर २०२६",
     category: "विकास",
     title: "प्रस्तावित पाबळ–धामारी एमआयडीसीची आजची स्थिती",
     marathiTitle: "प्रस्तावित पाबळ–धामारी एमआयडीसीची सद्यस्थिती",
-    summary: "काय अधिसूचित झाले, कोणत्या बाबतीत भूसंपादन सुरू असल्याचे वृत्त आहे आणि काय अद्याप निश्चित झालेले नाही यांची स्पष्ट विभागणी.",
-    sourceUrl: "https://sarkarnama.esakal.com/pune/another-big-midc-for-pune-not-chakan-or-ranjangaon-new-743-hectare-industrial-hub-to-come-up-in-this-area-aau85-sm89"
+    summary: "जूनमधील अधिसूचना आणि ऑगस्टमधील प्रक्रियेनंतर, २ सप्टेंबरच्या सकाळ वृत्तानुसार संपूर्ण प्रक्रियेला तूर्तास स्थगिती मिळाली आहे. प्रकल्प रद्द झाल्याची पुष्टी नाही.",
+    sourceUrl: "https://www.esakal.com/pune/pabal-dhamari-midc-project-put-on-hold-devendra-fadnavis-gives-relief-to-farmers-across-743-hectares-of-irrigated-land-sdj87"
   },
   {
     slug: "gangasagar-talav-open-questions",
