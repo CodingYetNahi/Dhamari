@@ -13,8 +13,7 @@ export default defineConfig({
         latestNews: resolve(import.meta.dirname,"latest-news/index.html"),
         midc: resolve(import.meta.dirname,"midc/index.html"),
         blog: resolve(import.meta.dirname,"blog/index.html"),
-        instagram: resolve(import.meta.dirname,"instagram/index.html"),
-        youtube: resolve(import.meta.dirname,"youtube/index.html")
+        media: resolve(import.meta.dirname,"media/index.html")
       }
     }
   }
