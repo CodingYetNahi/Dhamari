@@ -12,12 +12,25 @@ const textContent=value=>decode(value).replace(/<[^>]*>/g," ").replace(/\s+/g," 
 const required=(config.requiredTerms??[]).map(term=>String(term).toLocaleLowerCase("mr"));
 const excluded=(config.excludedTerms??[]).map(term=>String(term).toLocaleLowerCase("mr"));
 const discovered=[];let successfulQueries=0;
+const wait=milliseconds=>new Promise(resolve=>setTimeout(resolve,milliseconds));
+async function fetchQuery(query){
+  let lastError;
+  for(let attempt=1;attempt<=3;attempt++){
+    try{
+      const response=await fetch(`https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=mr&gl=IN&ceid=IN:mr`,{headers:{"user-agent":"DhamariArchive/1.0 (+https://github.com/CodingYetNahi/Dhamari)"},signal:AbortSignal.timeout(config.timeoutMilliseconds??12000)});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      return await response.text();
+    }catch(error){
+      lastError=error;
+      if(attempt<3)await wait(attempt*750);
+    }
+  }
+  throw lastError;
+}
 
 for(const query of config.queries){
   try{
-    const response=await fetch(`https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=mr&gl=IN&ceid=IN:mr`,{headers:{"user-agent":"DhamariArchive/1.0 (+https://github.com/CodingYetNahi/Dhamari)"},signal:AbortSignal.timeout(config.timeoutMilliseconds??12000)});
-    if(!response.ok)throw new Error(`HTTP ${response.status}`);
-    const xml=await response.text();successfulQueries++;
+    const xml=await fetchQuery(query);successfulQueries++;
     for(const item of xml.match(/<item>[\s\S]*?<\/item>/gi)??[]){
       const title=tag(item,"title"),sourceUrl=tag(item,"link"),description=textContent(tag(item,"description")),haystack=`${title} ${description}`.toLocaleLowerCase("mr");
       const publishedAt=tag(item,"pubDate"),publishedTime=Date.parse(publishedAt),maximumAge=(config.maximumArticleAgeDays??30)*86400000;
