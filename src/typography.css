@@ -3,12 +3,19 @@
 :root {
   --font-sans: Arial, "Noto Sans Devanagari", "Nirmala UI", "Mangal", sans-serif;
   --font-serif: Georgia, "Noto Serif Devanagari", "Kohinoor Devanagari", "Nirmala UI", serif;
+  --text-xs: 14px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-lg: 20px;
+  --text-xl: 26px;
+  --heading-sm: 30px;
+  --heading-md: 42px;
 }
 
 body {
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: var(--text-base);
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -34,41 +41,48 @@ h3,
 }
 
 /* Header and navigation */
+.nav {
+  min-height: 92px;
+}
+
 .brand {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.2;
+  letter-spacing: .01em;
+}
+
+.brand span {
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
 }
 
 .navlinks {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.3;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
 }
 
 /* Hero */
 h1 {
-  font-size: clamp(64px, 9vw, 124px);
-  line-height: .82;
+  font-size: clamp(70px, 9.5vw, 132px);
+  line-height: .84;
 }
 
 .lede {
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: clamp(21px, 2vw, 25px);
   line-height: 1.55;
 }
 
 .button {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.25;
 }
 
-/* Small labels that were previously 10–12px */
+/* Labels and supporting text: never smaller than 14px on desktop */
 .eyebrow,
 .sectionNo,
-.label {
-  font-size: 13px;
-  line-height: 1.45;
-}
-
+.label,
 .features span,
 .phadkePhoto span,
 .phadkePhoto a,
@@ -89,43 +103,24 @@ h1 {
 .statGrid span,
 .footnote,
 .mapFrame figcaption {
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.55;
 }
 
 .placeCard dt {
-  font-size: 14px;
+  font-size: var(--text-sm);
 }
 
-/* Section hierarchy */
-.split h2,
-.sourceHead h2,
-.water h2,
-.midc h2,
-.profileHead h2,
-.smart h2,
-.blogHead h2 {
-  font-size: clamp(42px, 5vw, 68px);
-  line-height: 1.02;
-}
-
-.historyHead h2 {
-  font-size: clamp(44px, 5.4vw, 68px);
-  line-height: 1.04;
-}
-
-.standfirst {
-  font-size: clamp(22px, 2.35vw, 27px);
-  line-height: 1.5;
-}
-
-.features h3,
-.event h3,
-.midcCopy h3,
-.principles h3,
-.photoNotice h3,
-.blogGrid h3 {
-  line-height: 1.18;
+/* Body copy: use one consistent readable scale */
+p,
+li,
+dt,
+dd,
+button,
+input,
+textarea,
+select {
+  font-size: var(--text-base);
 }
 
 .features p,
@@ -138,16 +133,55 @@ h1 {
 .footerGrid p,
 .profileHead > p,
 .blogGrid article > p:not(.blogMeta):not(.mr),
-.contribute p {
-  font-size: 16px;
+.contribute p,
+.waterGrid > div > p:not(.eyebrow),
+.split > div > p:last-child {
+  font-size: var(--text-base);
   line-height: 1.75;
 }
 
-.principles p {
-  font-size: 16px;
+/* Section hierarchy */
+.split h2,
+.sourceHead h2,
+.water h2,
+.midc h2,
+.profileHead h2,
+.smart h2,
+.blogHead h2,
+.historyHead h2 {
+  font-size: clamp(44px, 5vw, 66px);
+  line-height: 1.04;
 }
 
-/* Improve long Marathi/English reading without affecting layout */
+.standfirst {
+  font-size: clamp(23px, 2.2vw, 27px);
+  line-height: 1.5;
+}
+
+.features h3,
+.event h3,
+.midcCopy h3,
+.principles h3,
+.photoNotice h3,
+.blogGrid h3,
+.profileGrid h3,
+.mediaSubhead {
+  font-size: clamp(28px, 2.4vw, 34px);
+  line-height: 1.2;
+}
+
+.sourceList b,
+.videoGrid b,
+.embedCard b {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.footerTitle {
+  font-size: clamp(42px, 4vw, 52px);
+}
+
+/* Prevent awkward clipping/wrapping in Marathi and English */
 p,
 li,
 dd,
@@ -157,15 +191,27 @@ button {
   overflow-wrap: anywhere;
 }
 
-/* Tablet/mobile */
+/* Tablet */
 @media (max-width: 800px) {
   body {
     font-size: 16px;
   }
 
+  .nav {
+    min-height: 82px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
   h1 {
-    font-size: clamp(58px, 13vw, 76px);
-    line-height: .86;
+    font-size: clamp(62px, 13vw, 80px);
+    line-height: .88;
+  }
+
+  .lede {
+    font-size: 20px;
   }
 
   .historyHead h2,
@@ -176,21 +222,45 @@ button {
   .profileHead h2,
   .smart h2,
   .blogHead h2 {
-    font-size: clamp(38px, 8vw, 52px);
+    font-size: clamp(40px, 8vw, 52px);
+  }
+
+  .features h3,
+  .event h3,
+  .midcCopy h3,
+  .principles h3,
+  .photoNotice h3,
+  .blogGrid h3,
+  .profileGrid h3,
+  .mediaSubhead {
+    font-size: 28px;
   }
 
   .footerTitle {
-    font-size: 38px;
+    font-size: 40px;
   }
 }
 
+/* Phones */
 @media (max-width: 520px) {
+  :root {
+    --text-xs: 13px;
+    --text-sm: 14px;
+    --text-base: 16px;
+  }
+
   .brand {
+    font-size: 20px;
+  }
+
+  .brand span {
+    width: 38px;
+    height: 38px;
     font-size: 16px;
   }
 
   h1 {
-    font-size: clamp(50px, 16vw, 62px);
+    font-size: clamp(54px, 16vw, 66px);
     line-height: .9;
   }
 
@@ -198,23 +268,29 @@ button {
     font-size: 19px;
   }
 
-  .eyebrow,
-  .sectionNo,
-  .label {
-    font-size: 12px;
+  .historyHead h2,
+  .split h2,
+  .sourceHead h2,
+  .water h2,
+  .midc h2,
+  .profileHead h2,
+  .smart h2,
+  .blogHead h2 {
+    font-size: 38px;
   }
 
-  .features p,
-  .principles p,
-  .midcCopy p,
-  .newsNote p,
-  .sourceHead > p,
-  .historyHead > p,
-  .event div > p:last-child,
-  .footerGrid p,
-  .profileHead > p,
-  .blogGrid article > p:not(.blogMeta):not(.mr),
-  .contribute p {
-    font-size: 15px;
+  .features h3,
+  .event h3,
+  .midcCopy h3,
+  .principles h3,
+  .photoNotice h3,
+  .blogGrid h3,
+  .profileGrid h3,
+  .mediaSubhead {
+    font-size: 26px;
+  }
+
+  .footerTitle {
+    font-size: 36px;
   }
 }
