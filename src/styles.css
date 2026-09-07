@@ -39,7 +39,7 @@
 
 /* Consistent, readable Marathi typography. */
 :root{--bodyFont:"Noto Sans Devanagari","Kohinoor Devanagari","Nirmala UI","Mangal",system-ui,sans-serif;--displayFont:"Noto Serif Devanagari","Kohinoor Devanagari","Nirmala UI","Mangal",serif}
-body{font-family:var(--bodyFont);font-size:17px;line-height:1.65;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+body{font-family:var(--bodyFont);font-size: 25px;line-height:1.65;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 h1,h2,h3,.footerTitle,.placeCard dd,.standfirst,.phadkePhoto b,.era,.statusCard strong,.factGrid b,.sourceList b,.embedCard b,.videoGrid b,.blogGrid h3,.contribute b,.profileGrid h3,.profileGrid dd,.smartCards b,.newsCard h2,.mediaSectionTitle,.mediaSubhead{font-family:var(--displayFont)}
 .navlinks{font-size:13px;font-weight:650;letter-spacing:.07em}.eyebrow,.sectionNo,.label{font-size:13px;letter-spacing:.13em}.placeCard dt{font-size:14px}.placeCard small,.coords,.features span,.phadkePhoto span,.phadkePhoto a,.textLink,.statusCard span,.statusCard small,.factGrid span,.sourceList span,.sourceList small,.embedCard a,.videoGrid span,.embedPolicy,.blogMeta,.blogGrid article>a,.archiveLabel,.newsCard small,.newsCard>a,.footnote{font-size:13px}.badge{font-size:12px}.profileGrid dt,.profileGrid .caveat,.smartCards span{font-size:14px}.features p,.blogGrid article>p,.newsCard>p,.event div>p:last-child,.midcCopy p,.sourceHead>p,.footerGrid p{font-size:16px;line-height:1.75}
 
